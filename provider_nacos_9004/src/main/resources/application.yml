@@ -1,9 +1,9 @@
 server:
-  port: 9002
+  port: 9004
 
 spring:
   application:
-    name: consumer-service-nacos
+    name: consumer_nacos_openFeign
 
   cloud:
     nacos:

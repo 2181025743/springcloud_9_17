@@ -9,16 +9,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="provider_nacos_8002" />
       </profile>
-      <profile name="Annotation profile for nacos_config" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="D:/project/repository/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
-          <entry name="D:/project/repository/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
-        </processorPath>
-        <module name="nacos_config" />
-      </profile>
       <profile name="Annotation profile for springcloud_9_17" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -26,6 +16,8 @@
         <processorPath useClasspath="false">
           <entry name="D:/project/repository/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
+        <module name="provider_nacos_9004" />
+        <module name="nacos_config" />
         <module name="provider_nacos_9002" />
       </profile>
     </annotationProcessing>
@@ -39,6 +31,7 @@
       <module name="nacos_config" options="-parameters" />
       <module name="provider_nacos_8002" options="-parameters" />
       <module name="provider_nacos_9002" options="-parameters" />
+      <module name="provider_nacos_9004" options="-parameters" />
       <module name="provider_rest_8001" options="-parameters" />
       <module name="provider_rest_9001" options="-parameters" />
       <module name="springcloud_9_17" options="" />
