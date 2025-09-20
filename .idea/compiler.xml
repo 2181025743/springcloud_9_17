@@ -14,8 +14,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="D:/project/repository/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
-          <entry name="D:/project/repository/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$PROJECT_DIR$/../../../repository/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$PROJECT_DIR$/../../../repository/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="provider_nacos_9004" />
         <module name="consumer_nacos_9002" />
@@ -24,6 +24,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="consume_nacos_9002" target="17" />
+      <module name="provider_nacos_8002" target="17" />
       <module name="provider_rest_8001" target="17" />
       <module name="provider_rest_9001" target="17" />
     </bytecodeTargetLevel>
