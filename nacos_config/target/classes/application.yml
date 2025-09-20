@@ -1,0 +1,19 @@
+server:
+  port: 7001
+
+spring:
+  application:
+    name: nacos_config
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+        file-extension: yml
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+  config:
+    import: optional:nacos:nacos_config.yml

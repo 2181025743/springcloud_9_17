@@ -1,4 +1,4 @@
-package yx.provider_nacos_9002;
+package yx.nacos_config_7001;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -12,7 +12,7 @@ import yx.nacos_config_7001.entity.GeoCode;
 @RestController
 @RequestMapping("/webgis")
 public class WebGisController {
-    private static final String URL = "http://localhost:8001/geocode";
+    private static final String URL = "http://provider-service-nacos/geocode";
     @Resource
     private RestTemplate restTemplate;
 
@@ -39,8 +39,8 @@ public class WebGisController {
     }
 
     @GetMapping("{id}")
-    public Object selectId(@PathVariable Integer id) {
-        return restTemplate.getForObject(URL + "/" + id, Object.class);
+    public String selectId(@PathVariable Integer id) {
+        return restTemplate.getForObject(URL + "/" + id, String.class);
     }
 
     @PutMapping
