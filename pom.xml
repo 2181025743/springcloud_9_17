@@ -56,8 +56,8 @@
     <modules>
         <module>provider_rest_8001</module>
         <module>provider_rest_9001</module>
-        <module>provider_nacos_8002</module>
-        <module>provider_nacos_9002</module>
+        <module>consume_nacos_8002</module>
+        <module>consume_nacos_9002</module>
         <module>nacos_config</module>
         <module>provider_nacos_9004</module>
     </modules>
