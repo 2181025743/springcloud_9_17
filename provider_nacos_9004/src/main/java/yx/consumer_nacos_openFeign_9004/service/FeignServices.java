@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 import yx.consumer_nacos_openFeign_9004.entity.GeoCode;
 
-@FeignClient(value = "provider-service-nacos", path = "/geocode") // 服务提供方在nacos中的服务名
+@FeignClient(value = "provider-service-nacos") // 服务提供方在nacos中的服务名
 public interface FeignServices {
 
     @GetMapping("/geocode")

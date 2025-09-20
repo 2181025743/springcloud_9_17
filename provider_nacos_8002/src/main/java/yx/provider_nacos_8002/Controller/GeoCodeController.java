@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import yx.provider_nacos_8002.entity.GeoCode;
 import yx.provider_nacos_8002.service.GeoCodeService;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @RequestMapping("/geocode")
 public class GeoCodeController {
@@ -36,8 +39,12 @@ public class GeoCodeController {
         return geoCodeService.removeById(id);
     }
 
+
     @GetMapping("/{id}")
     public Object getById(@PathVariable Integer id) {
-        return geoCodeService.getById(id) + port;
+        Map<String, Object> result = new HashMap<>();
+        result.put("data", geoCodeService.getById(id));
+        result.put("port", port);
+        return result;  // 返回Map对象，会自动转换为JSON
     }
 }

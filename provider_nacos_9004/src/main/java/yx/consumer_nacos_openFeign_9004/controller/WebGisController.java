@@ -2,8 +2,8 @@ package yx.consumer_nacos_openFeign_9004.controller;
 
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 import yx.consumer_nacos_openFeign_9004.entity.GeoCode;
+import yx.consumer_nacos_openFeign_9004.service.FeignServices;
 
 /**
  * @author Administrator
@@ -12,39 +12,32 @@ import yx.consumer_nacos_openFeign_9004.entity.GeoCode;
 @RestController
 @RequestMapping("/webgis")
 public class WebGisController {
-    private static final String URL = "http://provider-service-nacos/geocode";
+
     @Resource
-    private RestTemplate restTemplate;
+    private FeignServices geoCodeService;
 
     @GetMapping
     public Object list() {
-        System.out.println("call geocode");
-        Object obj = restTemplate.getForObject(URL, Object.class);
-        System.out.println("generate map");
-        return obj;
+        return geoCodeService.listAll();
     }
 
     @PostMapping
     public Object save(@RequestBody GeoCode geoCode) {
-        System.out.println("call geocode save method");
-        Object obj = restTemplate.postForObject(URL, geoCode, Object.class);
-        System.out.println("save geocode finish");
-        return obj;
+        return geoCodeService.add(geoCode);
     }
 
     @DeleteMapping("{id}")
     public Object delete(@PathVariable Integer id) {
-        restTemplate.delete(URL + "/" + id);
-        return true;
+        return geoCodeService.delete(id);
     }
 
     @GetMapping("{id}")
-    public String selectId(@PathVariable Integer id) {
-        return restTemplate.getForObject(URL + "/" + id, String.class);
+    public Object getById(@PathVariable Integer id) {
+        return geoCodeService.getById(id);
     }
 
     @PutMapping
-    public void update(@RequestBody GeoCode geoCode) {
-        restTemplate.put(URL, geoCode);
+    public Object update(@RequestBody GeoCode geoCode) {
+        return geoCodeService.update(geoCode);
     }
 }
